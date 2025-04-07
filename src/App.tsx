@@ -16,19 +16,14 @@ const fakeChallenges = [
   "🗂️ Someone renamed all the folders on the server",
 ];
 
-const getChallengeImage = (challenge: string): string => {
+const getChallengeEmoji = (challenge: string): string => {
   const lc = challenge.toLowerCase();
-  if (lc.includes("coffee"))
-    return "https://em-content.zobj.net/thumbs/240/apple/354/hot-beverage_2615.png";
-  if (lc.includes("printer"))
-    return "https://em-content.zobj.net/thumbs/240/apple/354/printer_1f5a8-fe0f.png";
-  if (lc.includes("meeting"))
-    return "https://em-content.zobj.net/thumbs/240/apple/354/briefcase_1f4bc.png";
-  if (lc.includes("folders"))
-    return "https://em-content.zobj.net/thumbs/240/apple/354/file-folder_1f4c1.png";
-  if (lc.includes("team"))
-    return "https://em-content.zobj.net/thumbs/240/apple/354/people-holding-hands_1f9d1-200d-1f91d-200d-1f9d1.png";
-  return "https://em-content.zobj.net/thumbs/240/apple/354/building_1f3e2.png";
+  if (lc.includes("coffee")) return "☕";
+  if (lc.includes("printer")) return "🖨️";
+  if (lc.includes("meeting")) return "💼";
+  if (lc.includes("folders")) return "📂";
+  if (lc.includes("team")) return "🤝";
+  return "🏢";
 };
 
 function capitalizeFirst(text: string): string {
@@ -208,7 +203,9 @@ function App() {
                         : ""
                     }`}
                   >
-                    <img src={getChallengeImage(c)} alt="Challenge visual" />
+                    <div className="emoji" style={{ fontSize: "3rem" }}>
+                      {getChallengeEmoji(c)}
+                    </div>
                     <p>{c}</p>
                     <div className="choices">
                       <button

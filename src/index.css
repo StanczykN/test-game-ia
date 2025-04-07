@@ -269,3 +269,9 @@ h2 {
   border: 2px solid #333;
   background-color: #f0f0f0;
 }
+
+.emoji {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
