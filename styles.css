@@ -1,0 +1,6 @@
+/* ...existing code... */
+.card emoji {
+  height: 20px;
+  width: auto; /* Maintain aspect ratio */
+}
+/* ...existing code... */
