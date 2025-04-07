@@ -125,7 +125,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>🎓 Innovation Academy Challenge Game</h1>
+      <h1>🎓 Innovation Academy ChallengeXYZ Game</h1>
 
       {screen === "join" && (
         <div className="game-area">
