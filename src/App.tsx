@@ -125,13 +125,13 @@ function App() {
 
   return (
     <div className="container">
-      <h1>🎓 Innovation Academy ChallengeXYZ Game</h1>
+      <h1>🎓 Innovation Academy Challenge Game!</h1>
 
       {screen === "join" && (
         <div className="game-area">
           <p>
-            🤝 Enterrrrrrrr your nickname and join your peers to share real
-            challenges you’ve faced during the Innovation Academy course.
+            🤝 Enter your nickname and join your peers to share real challenges
+            you have faced during the Innovation Academy course.
           </p>
           <input
             type="text"
