@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import "./index.css";
-import { addPlayer, getPlayers, submitChallenge } from "./sheetService";
+import {
+  addPlayer,
+  getPlayers,
+  submitChallenge,
+  updatePlayerScore,
+} from "./sheetService";
 
 interface Player {
   player_name: string;
@@ -103,7 +108,7 @@ function App() {
     setAnswers((prev) => ({ ...prev, [challenge]: choice }));
   };
 
-  const handleSubmitAnswers = () => {
+  const handleSubmitAnswers = async () => {
     const realChallenges = players.map((p) =>
       capitalizeFirst(p.challenge!.trim())
     );
@@ -116,6 +121,13 @@ function App() {
     });
     setScore(newScore);
     setSubmitted(true);
+
+    // Store the score in the Google Spreadsheet
+    try {
+      await updatePlayerScore(name, gameCode, newScore);
+    } catch (error) {
+      console.error("Failed to update score:", error);
+    }
   };
 
   return (

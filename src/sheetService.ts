@@ -26,3 +26,19 @@ export const submitChallenge = async (player: {
 }) => {
   return axios.post(API_URL, player);
 };
+
+export const updatePlayerScore = async (
+  playerName: string,
+  gameCode: string,
+  score: number
+) => {
+  try {
+    await axios.post("/updateScore", {
+      player_name: playerName,
+      game_code: gameCode,
+      score,
+    });
+  } catch (error) {
+    console.error("Error updating player score:", error);
+  }
+};
